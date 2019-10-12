@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <ApplicationIcon />
+    <Win32Resource />
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExpressionSolver.Engine\ExpressionSolver.Engine.csproj" />
+  </ItemGroup>
+</Project>

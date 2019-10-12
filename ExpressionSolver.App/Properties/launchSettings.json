@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "EquationsSolver.App": {
+      "commandName": "Project",
+      "commandLineArgs": "\"335 + 25 / 25 - 5\""
+    }
+  }
+}
