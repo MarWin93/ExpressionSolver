@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
 
-namespace EquationsSolver.Engine.Tests
+namespace ExpressionSolver.Engine.Tests
 {
 
     [TestFixture]
@@ -35,9 +35,9 @@ namespace EquationsSolver.Engine.Tests
         [TestCase("var1 + 2", "var1")]
         public void Calculate_Throws_ArgumentException_When_Unsupported_Expression_Element_Occured(
             string input,
-            string invalidEquationElement)
+            string invalidExpressionElement)
         {
-            var expectedExceptionMessage = $"Expression contains invalid element:'{invalidEquationElement}'";
+            var expectedExceptionMessage = $"Expression contains invalid element:'{invalidExpressionElement}'";
 
             Assert.Throws<ArgumentException>(() => subject.Calculate(input), expectedExceptionMessage);
         }

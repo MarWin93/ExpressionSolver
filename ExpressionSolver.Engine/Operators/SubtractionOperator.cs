@@ -1,4 +1,4 @@
-﻿namespace EquationsSolver.Engine.Operators
+﻿namespace ExpressionSolver.Engine.Operators
 {
     public class SubtractionOperator : Operator
     {

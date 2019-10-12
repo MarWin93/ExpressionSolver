@@ -1,7 +1,7 @@
-﻿using EquationsSolver.Engine;
+﻿using ExpressionSolver.Engine;
 using System;
 
-namespace EquationsSolver.App
+namespace ExpressionSolver.App
 {
     public class ExpressionSolver
     {
@@ -14,8 +14,8 @@ namespace EquationsSolver.App
                 Console.WriteLine($"Welcome in Expression Solver!");
                 Console.WriteLine($"Your expression is: {input}");
 
-                var equationCalculator = new ExpressionCalculator();
-                var result = equationCalculator.Calculate(input);
+                var expressionCalculator = new ExpressionCalculator();
+                var result = expressionCalculator.Calculate(input);
 
                 Console.WriteLine($"Expression has been calculated successfully.");
                 Console.WriteLine($"The result is: {result}");

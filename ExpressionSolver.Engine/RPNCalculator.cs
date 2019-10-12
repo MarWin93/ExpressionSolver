@@ -1,17 +1,17 @@
-﻿using EquationsSolver.Engine.Operators;
+﻿using ExpressionSolver.Engine.Operators;
 using System;
 using System.Collections.Generic;
 
-namespace EquationsSolver.Engine
+namespace ExpressionSolver.Engine
 {
     internal class RPNCalculator
     {
         internal decimal Calculate(
             IEnumerable<string> postfixFormElements,
             IDictionary<string, Operator> operators,
-            int equationElementsLength)
+            int expressionElementsLength)
         {
-            var stack = new Stack<decimal>(equationElementsLength);
+            var stack = new Stack<decimal>(expressionElementsLength);
 
             try
             {

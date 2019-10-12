@@ -1,30 +1,30 @@
-﻿using EquationsSolver.Engine.Operators;
+﻿using ExpressionSolver.Engine.Operators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace EquationsSolver.Engine
+namespace ExpressionSolver.Engine
 {
     internal class InfixToPostfixNotationConverter
     {
-        internal IEnumerable<string> Convert(string[] equationElements, IDictionary<string, Operator> operators)
+        internal IEnumerable<string> Convert(string[] expressionElements, IDictionary<string, Operator> operators)
         {
-            var stack = new Stack<Operator>(equationElements.Length);
-            var outputElements = new List<string>(equationElements.Length);
+            var stack = new Stack<Operator>(expressionElements.Length);
+            var outputElements = new List<string>(expressionElements.Length);
 
             try
             {
-                foreach (var equationElement in equationElements)
+                foreach (var expressionElement in expressionElements)
                 {
-                    if (int.TryParse(equationElement, out var number))
+                    if (int.TryParse(expressionElement, out var number))
                     {
                         outputElements.Add(number.ToString());
                         continue;
                     }
 
-                    if (!operators.TryGetValue(equationElement, out var op))
+                    if (!operators.TryGetValue(expressionElement, out var op))
                     {
-                        throw new ArgumentException($"Expression contains invalid element:'{equationElement}'");
+                        throw new ArgumentException($"Expression contains invalid element:'{expressionElement}'");
                     }
 
                     if (!stack.TryPeek(out var vertexOp))

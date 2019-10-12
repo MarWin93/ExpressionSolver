@@ -1,9 +1,9 @@
-﻿using EquationsSolver.Engine.Operators;
+﻿using ExpressionSolver.Engine.Operators;
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace EquationsSolver.Engine
+namespace ExpressionSolver.Engine
 {
     public class ExpressionCalculator
     {
@@ -32,10 +32,10 @@ namespace EquationsSolver.Engine
                 var converter = new InfixToPostfixNotationConverter();
                 var calculator = new RPNCalculator();
                 
-                var equationElements = GetEquationElements(input);
-                var postfixFormElements = converter.Convert(equationElements, _operators);
+                var expressionElements = GetExpressionElements(input);
+                var postfixFormElements = converter.Convert(expressionElements, _operators);
 
-                return calculator.Calculate(postfixFormElements, _operators, equationElements.Length);
+                return calculator.Calculate(postfixFormElements, _operators, expressionElements.Length);
             }
             catch (Exception)
             {
@@ -43,7 +43,7 @@ namespace EquationsSolver.Engine
             }
         }
 
-        private static string[] GetEquationElements(string input)
+        private static string[] GetExpressionElements(string input)
         {
             var formattedExpression = Regex.Replace(input, @"\s+", "");
             var expRegString = "(?<=[-+*/()])|(?=[-+*/()])";
